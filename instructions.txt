@@ -15,3 +15,8 @@ thats how u create css file and check the styling in given
 finally you can run
 
 C:\Users\Administrator\Desktop\bot\python sample.py
+
+
+--Samarth
+
+pip install Chatterbot==

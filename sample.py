@@ -11,14 +11,14 @@ trainer.train("data/data.yml")
 
 @app.route("/")
 def index():
-     return render_template("index.html") #to send context to html
+     return render_template("chat.html") #to send context to html
 
 @app.route("/get")
 def get_bot_response():
      userText = request.args.get("msg") #get data from input,we write js  to index.html
      return str(english_bot.get_response(userText))
-
-
+     
+     
 if __name__ == "__main__":
      app.run(debug = True)
 

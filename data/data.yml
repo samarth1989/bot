@@ -11,3 +11,10 @@ conversations:
   - Ok shall I give your favourite movie list?
 - - Yes Avengers playlist.
   - Okay done enjoy the movie.
+- - I need a property
+  - Hello! Would you like to Buy Or Rent?
+- - Rent
+  - Under 500 or 1000 or 1500 or 2000 or 2500?
+- - "500"
+  - http://rentandbuy:81/sellandlethouses/filterhome.html?type=rent&price=500
+
