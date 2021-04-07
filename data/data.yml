@@ -16,5 +16,26 @@ conversations:
 - - Rent
   - Under 500 or 1000 or 1500 or 2000 or 2500?
 - - "500"
-  - http://rentandbuy:81/sellandlethouses/filterhome.html?type=rent&price=500
-
+  - url: "http://rentandbuy:81/sellandlethouses/filterhome.html?type=rent&price=500"
+- - "1000"
+  - url: "http://rentandbuy:81/sellandlethouses/filterhome.html?type=rent&price=1000"  
+- - "1500"
+  - url: "http://rentandbuy:81/sellandlethouses/filterhome.html?type=rent&price=1500"  
+- - "2000"
+  - url: "http://rentandbuy:81/sellandlethouses/filterhome.html?type=rent&price=2000"
+- - "2500"
+  - url: "http://rentandbuy:81/sellandlethouses/filterhome.html?type=rent&price=2500"
+- - Buy
+  - Under 50000 or 100000 or 150000 or 200000 or 250000?
+- - "50000"
+  - url: "http://rentandbuy:81/sellandlethouses/filterhome.html?type=buy&price=50000"
+- - "100000"
+  - url: "http://rentandbuy:81/sellandlethouses/filterhome.html?type=buy&price=100000"
+- - "150000"                                                     
+  - url: "http://rentandbuy:81/sellandlethouses/filterhome.html?type=buy&price=150000"  
+- - "200000"                                                     
+  - url: "http://rentandbuy:81/sellandlethouses/filterhome.html?type=buy&price=200000"
+- - "250000"                                                     
+  - url: "http://rentandbuy:81/sellandlethouses/filterhome.html?type=buy&price=250000"
+- - Thank You
+  - Thanks for contacting us :)
