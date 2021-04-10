@@ -16,8 +16,9 @@ def index():
 @app.route("/get")
 def get_bot_response():
      userText = request.args.get("msg") #get data from input,we write js  to index.html
-     return str(english_bot.get_response(userText))
-     
+     resp = english_bot.get_response(userText)
+     #return str(english_bot.get_response(userText))
+     return str(resp)
      
 if __name__ == "__main__":
      app.run(debug = True)
