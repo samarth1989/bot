@@ -4,7 +4,9 @@ conversations:
 - - Good Evening
   - Good evening
 - - Hello 
-  - Hey how are you?
+  - Hello how would you like to?
+    Buy
+    Rent
 - - I am fine but feeling bored.
   - ohh what you want me to do?
 - - I want to see a Movie?
@@ -16,3 +18,6 @@ conversations:
 - - Rent
   - Under 500 or 1000 or 1500 or 2000 or 2500?
     Thanks for contacting us :)
+- - Buy
+  - Under 500 or 1000 or 1500 or 2000 or 2500?
+    Thanks for contacting us :)    
