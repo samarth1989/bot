@@ -1,20 +1,6 @@
 categories:
 - conversations
 conversations:
-- - Good Evening
-  - Good evening
-- - Hello 
-  - Hello how would you like to?
-    Buy
-    Rent
-- - I am fine but feeling bored.
-  - ohh what you want me to do?
-- - I want to see a Movie?
-  - Ok shall I give your favourite movie list?
-- - Yes Avengers playlist.
-  - Okay done enjoy the movie.
-- - I need a property
-  - Hello! Would you like to Buy Or Rent?
 - - Rent
   - Under 500 or 1000 or 1500 or 2000 or 2500?
     Thanks for contacting us :)

@@ -90,7 +90,6 @@ body {font-family: Arial, Helvetica, sans-serif;}
   border: none;
   cursor: pointer;
   width: 100%;
-  margin-bottom:10px;
   margin-top: 10px;
   opacity: 0.8;
   border-radius: 10px;
@@ -144,7 +143,8 @@ body {font-family: Arial, Helvetica, sans-serif;}
     margin-left: 5px;
     border-color: #555;
     margin-top: 5px;
-    max-height: 250px;
+    height: 250px;
+    width: 300px;
 }
 .chatbox__header {
   width: 100%;
@@ -183,14 +183,16 @@ body {font-family: Arial, Helvetica, sans-serif;}
 
 .chip {
   background-color: white;
-  border: 1px solid#060dcfc7;
-  color: #060dcfc7;
+  border: 1px solid#70bf73;
+  color: #70bf73;
   font-weight: bolder;
   text-align: center;
+  border-radius: 10px;
+  margin: 5px;
 }
 
 .chip:hover {
-  background-color: #060dcfc7;
+  background-color: #70bf73;
   color: white;
 }
 
@@ -211,7 +213,16 @@ div.chats::-webkit-scrollbar {
     background: transparent;
     / optional: just make scrollbar invisible */
 }
-
+.userAvatar {
+  animation: animateElement linear 0.3s;
+  animation-iteration-count: 1;
+  border-radius: 50%;
+  width: 1.5em;
+  height: 1.5em;
+  float: left;
+  margin-right: 5px;
+  /* border: 2px solid  #060DCF ; */
+}
 
 </style>
 </head>
@@ -236,14 +247,14 @@ div.chats::-webkit-scrollbar {
         <div class="chats" id="chats">
           <div class="clearfix"></div>
         </div>
-    <div id = "userInput">
-        <textarea id ="textInput" class="msg" type ="text" name="msg" placeholder="Please type your message "></textarea>
-        <input id = "buttonInput" class = "btn" type = "submit" value="Send">
+    <!--<div id = "userInput">-->
+       <!-- <textarea id ="textInput" class="msg" type ="text" name="msg" placeholder="Please type your message "></textarea>
+        <input id = "buttonInput" class = "btn" type = "submit" value="Send"> -->
     
     
    <!--<button type="button" class="btn">Send</button> --> 
     <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
-</div>
+<!--</div>-->
 </div>
 </div>
 
@@ -251,20 +262,19 @@ div.chats::-webkit-scrollbar {
 
 function showQuickReplies() {
   debugger;
-  var quickRepliesData = ['rent','sell']
+  var quickRepliesData = ['Rent','Buy']
     let chips = "";
     for (let i = 0; i < quickRepliesData.length; i += 1) {
         const chip = `<div class="chip" data-payload='${quickRepliesData[i]}'>${quickRepliesData[i]}</div>`;
         chips += chip;
     }
-
     const quickReplies = `<div class="quickReplies">${chips}</div><div class="clearfix"></div>`;
     $(quickReplies).appendTo(".chats").fadeIn(1000);
     
     const terminalResultsDiv = document.getElementById("chats");
     terminalResultsDiv.scrollTop = terminalResultsDiv.scrollHeight;
 
-    const slider = document.querySelector(".quickReplies");
+  /*  const slider = document.querySelector(".quickReplies");
     let isDown = false;
     let startX;
     let scrollLeft;
@@ -289,7 +299,7 @@ function showQuickReplies() {
         const x = e.pageX - slider.offsetLeft;
         const walk = (x - startX) * 3; // scroll-fast
         slider.scrollLeft = scrollLeft - walk;
-    });
+    });*/
 }
 
 
@@ -300,53 +310,32 @@ $(document).on("click", ".quickReplies .chip", function () {
     const payload = this.getAttribute("data-payload");
     console.log("chip payload: ", this.getAttribute("data-payload"));
     setUserResponse(text);
-    send(payload);
-
-    // delete the quickreplies
+    getBotResponse(text);
     $(".quickReplies").remove();
 });
 
 
 function send(message) {
-  debugger;
-    // $.ajax({
-    //     url: rasa_server_url,
-    //     type: "POST",
-    //     contentType: "application/json",
-    //     data: JSON.stringify({ message, sender: sender_id }),
-    //     success(botResponse, status) {
-    //         console.log("Response from Rasa: ", botResponse, "\nStatus: ", status);
-
-    //         // if user wants to restart the chat and clear the existing chat contents
-    //         if (message.toLowerCase() === "/restart") {
-    //             $("#userInput").prop("disabled", false);
-
-    //             // if you want the bot to start the conversation after restart
-    //             // customActionTrigger();
-    //             return;
-    //         }
-    //         setBotResponse(botResponse);
-    //     },
-    //     error(xhr, textStatus) {
-    //         if (message.toLowerCase() === "/restart") {
-    //             $("#userInput").prop("disabled", false);
-    //             // if you want the bot to start the conversation after the restart action.
-    //             // actionTrigger();
-    //             // return;
-    //         }
-
-    //         // if there is no response from rasa server, set error bot response
-    //         setBotResponse("");
-    //         console.log("Error from bot end: ", textStatus);
-    //     },
-    // });
+  $.get("/get", {msg:message }).done(function(data) {
+      var quickRepliesData = [ ]
+      quickRepliesData=data
+      let chips = "";
+    for (let i = 0; i < quickRepliesData.length; i += 1) {
+        const chip = `<div class="chip" data-payload='${quickRepliesData[i]}'>${quickRepliesData[i]}</div>`;
+        chips += chip;
+    }
+    const quickReplies = `<div class="quickReplies">${chips}</div><div class="clearfix"></div>`;
+    $(quickReplies).appendTo(".chats").fadeIn(1000);
+    
+    const terminalResultsDiv = document.getElementById("chats");
+    terminalResultsDiv.scrollTop = terminalResultsDiv.scrollHeight;
+    });
 }
 
 function setUserResponse(message) {
   debugger;
-    const user_response = `<img class="userAvatar" src='./static/img/userAvatar.jpg'><p class="userMsg">${message} </p><div class="clearfix"></div>`;
-    $(user_response).appendTo(".chats").show("slow");
-
+    const user_response = `<img class="userAvatar" src="userAvatar.jpg"><p class="userMsg">${message} </p><div class="clearfix"></div>`;
+    $("#chatbox").append(user_response);
     $(".usrInput").val("");
     //scrollToBottomOfResults();
     //showBotTyping();
@@ -359,23 +348,39 @@ function setUserResponse(message) {
 function openForm() {
   document.getElementById("myForm").style.display = "block";
   document.getElementById("divimg").style.display = "none";
+  document.getElementById("chatbox").innerHTML = "";
+  document.getElementById("chats").innerHTML = "";
+  var initialText="Hello Welcome to Buy or Rent. What would you like to do?";
+    debugger;
+    var userHtml = '<p class = "userText"><span>' + initialText + '</span></p>';
+    $("#textInput").val("");
+    $("#chatbox").append(userHtml);
+    var quickRepliesData = ['Rent','Buy']
+    let chips = "";
+    for (let i = 0; i < quickRepliesData.length; i += 1) {
+        const chip = `<div class="chip" data-payload='${quickRepliesData[i]}'>${quickRepliesData[i]}</div>`;
+        chips += chip;
+    }
+
+    const quickReplies = `<div class="quickReplies">${chips}</div><div class="clearfix"></div>`;
+    $(quickReplies).appendTo(".chats").fadeIn(1000);
+    
+    const terminalResultsDiv = document.getElementById("chats");
+    terminalResultsDiv.scrollTop = terminalResultsDiv.scrollHeight;
 }
 
 function closeForm() {
   document.getElementById("myForm").style.display = "none";
   document.getElementById("divimg").style.display = "block";
 }
-</script>
-<script>
-    function getBotResponse(){
+  function getBotResponse(message){
       debugger;
-    var rawText = $("#textInput").val();
+    var rawText = message;
     var userHtml = '<p class = "userText"><span>' + rawText + '</span></p>';
     $("#textInput").val("");
     $("#chatbox").append(userHtml);
-    document.getElementById('userInput').scrollIntoView({block:'start',behaviour:'smooth'});
+    //document.getElementById('userInput').scrollIntoView({block:'start',behaviour:'smooth'});
     $.get("/get", {msg:rawText }).done(function(data) {
-      debugger;
     var botHtml = '<p class ="botText"><span>' + data + '</span></p>';
     $("#chatbox").append(botHtml);
     document.getElementById('userInput').scrollIntoView({block : 'start',behaviour:'smooth'});
@@ -384,17 +389,14 @@ function closeForm() {
 
     $("#textInput").keypress(function(e){
     if(e.which == 13) {
-      debugger;
     getBotResponse();
-    var quickRepliesData = ['rent','sell']
-    showQuickReplies(quickRepliesData);
+    showQuickReplies();
     }
     });
 
     $("#buttonInput").click(function() {
     getBotResponse();
-    var quickRepliesData = ['rent','sell']
-    showQuickReplies(quickRepliesData);
+    showQuickReplies();
     })
 </script>
 

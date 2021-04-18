@@ -22,8 +22,8 @@ def get_bot_response():
           resp.append(english_bot.get_response(userText))
           i+=1
           #return str(english_bot.get_response(userText))
-     new_menu = list(dict.fromkeys(resp))
-     return str(new_menu)
+     #new_menu = list(dict.fromkeys(resp))
+     return str(resp)
      
 if __name__ == "__main__":
      app.run(debug = True)
