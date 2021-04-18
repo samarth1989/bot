@@ -143,12 +143,8 @@ body {font-family: Arial, Helvetica, sans-serif;}
     margin-left: 5px;
     border-color: #555;
     margin-top: 5px;
-<<<<<<< HEAD
     height: 250px;
     width: 300px;
-=======
-    max-height: 250px;
->>>>>>> 9f6a23f5520cf294f55d30fb0d55535d6b2b94cf
 }
 .chatbox__header {
   width: 100%;
@@ -265,7 +261,6 @@ div.chats::-webkit-scrollbar {
 <script>
 
 function showQuickReplies() {
-  debugger;
   var quickRepliesData = ['Rent','Buy']
     let chips = "";
     for (let i = 0; i < quickRepliesData.length; i += 1) {
@@ -309,35 +304,15 @@ function showQuickReplies() {
 
 // on click of quickreplies, get the payload value and send
 $(document).on("click", ".quickReplies .chip", function () {
-  debugger;
     const text = this.innerText;
     const payload = this.getAttribute("data-payload");
-    console.log("chip payload: ", this.getAttribute("data-payload"));
+    //console.log("chip payload: ", this.getAttribute("data-payload"));
     setUserResponse(text);
     getBotResponse(text);
     $(".quickReplies").remove();
 });
 
-
-function send(message) {
-  $.get("/get", {msg:message }).done(function(data) {
-      var quickRepliesData = [ ]
-      quickRepliesData=data
-      let chips = "";
-    for (let i = 0; i < quickRepliesData.length; i += 1) {
-        const chip = `<div class="chip" data-payload='${quickRepliesData[i]}'>${quickRepliesData[i]}</div>`;
-        chips += chip;
-    }
-    const quickReplies = `<div class="quickReplies">${chips}</div><div class="clearfix"></div>`;
-    $(quickReplies).appendTo(".chats").fadeIn(1000);
-    
-    const terminalResultsDiv = document.getElementById("chats");
-    terminalResultsDiv.scrollTop = terminalResultsDiv.scrollHeight;
-    });
-}
-
 function setUserResponse(message) {
-  debugger;
     const user_response = `<img class="userAvatar" src="userAvatar.jpg"><p class="userMsg">${message} </p><div class="clearfix"></div>`;
     $("#chatbox").append(user_response);
     $(".usrInput").val("");
@@ -355,7 +330,6 @@ function openForm() {
   document.getElementById("chatbox").innerHTML = "";
   document.getElementById("chats").innerHTML = "";
   var initialText="Hello Welcome to Buy or Rent. What would you like to do?";
-    debugger;
     var userHtml = '<p class = "userText"><span>' + initialText + '</span></p>';
     $("#textInput").val("");
     $("#chatbox").append(userHtml);
@@ -377,51 +351,37 @@ function closeForm() {
   document.getElementById("myForm").style.display = "none";
   document.getElementById("divimg").style.display = "block";
 }
-<<<<<<< HEAD
-  function getBotResponse(message){
-      debugger;
+function getBotResponse(message){
     var rawText = message;
-    var userHtml = '<p class = "userText"><span>' + rawText + '</span></p>';
-    $("#textInput").val("");
-    $("#chatbox").append(userHtml);
+    debugger;
     //document.getElementById('userInput').scrollIntoView({block:'start',behaviour:'smooth'});
-=======
-</script>
-<script>
-    function getBotResponse(){
-    var rawText = $("#textInput").val();
-    var userHtml = '<p class = "userText"><span>' + rawText + '</span></p>';
-    $("#textInput").val("");
-    $("#chatbox").append(userHtml);
-    document.getElementById('userInput').scrollIntoView({block:'start',behaviour:'smooth'});
->>>>>>> 9f6a23f5520cf294f55d30fb0d55535d6b2b94cf
     $.get("/get", {msg:rawText }).done(function(data) {
-    var botHtml = '<p class ="botText"><span>' + data + '</span></p>';
-    $("#chatbox").append(botHtml);
-    document.getElementById('userInput').scrollIntoView({block : 'start',behaviour:'smooth'});
+      debugger;
+      var quickRepliesData = [];
+      quickRepliesData.push(data);
+    let chips = "";
+    for (let i = 0; i < quickRepliesData.length; i += 1) {
+        const chip = `<div class="chip" data-payload='${quickRepliesData[i]}'>${quickRepliesData[i]}</div>`;
+        chips += chip;
+    }
+    const quickReplies = `<div class="quickReplies">${chips}</div><div class="clearfix"></div>`;
+    $(quickReplies).appendTo(".chats").fadeIn(1000);
+    const terminalResultsDiv = document.getElementById("chats");
+    terminalResultsDiv.scrollTop = terminalResultsDiv.scrollHeight;
+    //document.getElementById('userInput').scrollIntoView({block : 'start',behaviour:'smooth'});
     });
     }
 
-    $("#textInput").keypress(function(e){
+    $("#textInput").keypress(function(e){ 
     if(e.which == 13) {
     getBotResponse();
-<<<<<<< HEAD
     showQuickReplies();
-=======
-    var quickRepliesData = ['rent','sell']
-    showQuickReplies(quickRepliesData);
->>>>>>> 9f6a23f5520cf294f55d30fb0d55535d6b2b94cf
     }
     });
 
     $("#buttonInput").click(function() {
     getBotResponse();
-<<<<<<< HEAD
     showQuickReplies();
-=======
-    var quickRepliesData = ['rent','sell']
-    showQuickReplies(quickRepliesData);
->>>>>>> 9f6a23f5520cf294f55d30fb0d55535d6b2b94cf
     })
 </script>
 

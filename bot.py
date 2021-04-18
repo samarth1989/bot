@@ -16,14 +16,14 @@ def index():
 @app.route("/get")
 def get_bot_response():
      userText = request.args.get("msg") #get data from input,we write js  to index.html
-     i=0
-     resp = []
-     while i < 10:
-          resp.append(english_bot.get_response(userText))
-          i+=1
-          #return str(english_bot.get_response(userText))
+     #i=0
+     #resp = []
+     #while i < 3:
+     #resp.append(english_bot.get_response(userText))
+          #i+=1
+     return str(english_bot.get_response(userText))
      #new_menu = list(dict.fromkeys(resp))
-     return str(resp)
+     #return resp
      
 if __name__ == "__main__":
      app.run(debug = True)
