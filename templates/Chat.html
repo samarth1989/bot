@@ -143,8 +143,12 @@ body {font-family: Arial, Helvetica, sans-serif;}
     margin-left: 5px;
     border-color: #555;
     margin-top: 5px;
+<<<<<<< HEAD
     height: 250px;
     width: 300px;
+=======
+    max-height: 250px;
+>>>>>>> 9f6a23f5520cf294f55d30fb0d55535d6b2b94cf
 }
 .chatbox__header {
   width: 100%;
@@ -373,6 +377,7 @@ function closeForm() {
   document.getElementById("myForm").style.display = "none";
   document.getElementById("divimg").style.display = "block";
 }
+<<<<<<< HEAD
   function getBotResponse(message){
       debugger;
     var rawText = message;
@@ -380,6 +385,16 @@ function closeForm() {
     $("#textInput").val("");
     $("#chatbox").append(userHtml);
     //document.getElementById('userInput').scrollIntoView({block:'start',behaviour:'smooth'});
+=======
+</script>
+<script>
+    function getBotResponse(){
+    var rawText = $("#textInput").val();
+    var userHtml = '<p class = "userText"><span>' + rawText + '</span></p>';
+    $("#textInput").val("");
+    $("#chatbox").append(userHtml);
+    document.getElementById('userInput').scrollIntoView({block:'start',behaviour:'smooth'});
+>>>>>>> 9f6a23f5520cf294f55d30fb0d55535d6b2b94cf
     $.get("/get", {msg:rawText }).done(function(data) {
     var botHtml = '<p class ="botText"><span>' + data + '</span></p>';
     $("#chatbox").append(botHtml);
@@ -390,13 +405,23 @@ function closeForm() {
     $("#textInput").keypress(function(e){
     if(e.which == 13) {
     getBotResponse();
+<<<<<<< HEAD
     showQuickReplies();
+=======
+    var quickRepliesData = ['rent','sell']
+    showQuickReplies(quickRepliesData);
+>>>>>>> 9f6a23f5520cf294f55d30fb0d55535d6b2b94cf
     }
     });
 
     $("#buttonInput").click(function() {
     getBotResponse();
+<<<<<<< HEAD
     showQuickReplies();
+=======
+    var quickRepliesData = ['rent','sell']
+    showQuickReplies(quickRepliesData);
+>>>>>>> 9f6a23f5520cf294f55d30fb0d55535d6b2b94cf
     })
 </script>
 
