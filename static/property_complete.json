@@ -1,0 +1,382 @@
+﻿[
+  {
+    "id": 1,
+    "data": {
+      "address": "240 N Circular",
+      "country": "Ireland",
+      "county": "Dublin",
+      "city": "Dublin",
+      "area": "Dublin 7",
+      "listingName": "240 N Circular, Dublin",
+      "numBedroom": "1",
+      "maxPrice": "50000",
+      "type": "buy",
+      "photo": [
+        "static/img/1.jpg",
+        "static/img/1.1.jpg",
+        "static/img/1.2.jpg"
+      ],
+      "description": "Grayling Property Management are delighted to present this beautiful, bright, spacious studio apartment in the heart of the ever popular Rathmines. This apartment comprises a modern kitchen, living/dining area and separate bedroom. The modern bathroom is fitted with a power shower. The apartment features built in wardrobes to ensure ample storage. Rathmines is a vibrant and energetic village just 15 minutes walk from the city centre of Dublin. Within the village there are a wide variety of shopping, dining and entertainment conveniences including Tesco, Lidl, Swan Leisure, Blackbird and Copan to name but a few. Numerous bus routes servicing all parts of the city pass the front door while the nearest LUAS (Ranelagh) is just 12 minutes walk away.Viewing is essential to appreciate this fine property."
+    }
+  },
+  {
+    "id": 2,
+    "data": {
+      "address": "241 N Circular",
+      "country": "Ireland",
+      "county": "Dublin",
+      "city": "Dublin",
+      "area": "Dublin 7",
+      "listingName": "241 N Circular, Dublin",
+      "numBedroom": "1",
+      "maxPrice": "1000",
+      "type": "rent",
+      "photo": [
+        "static/img/2.jpg",
+        "static/img/2.1.jpg",
+        "static/img/2.2.jpg"
+      ],
+      "description": "Grayling Property Management are delighted to present this beautiful, bright, spacious studio apartment in the heart of the ever popular Rathmines. This apartment comprises a modern kitchen, living/dining area and separate bedroom. The modern bathroom is fitted with a power shower. The apartment features built in wardrobes to ensure ample storage. Rathmines is a vibrant and energetic village just 15 minutes walk from the city centre of Dublin. Within the village there are a wide variety of shopping, dining and entertainment conveniences including Tesco, Lidl, Swan Leisure, Blackbird and Copan to name but a few. Numerous bus routes servicing all parts of the city pass the front door while the nearest LUAS (Ranelagh) is just 12 minutes walk away.Viewing is essential to appreciate this fine property."
+    }
+  },
+  {
+    "id": 3,
+    "data": {
+      "address": "Adelaide Road, 7",
+      "country": "Ireland",
+      "county": "Dublin",
+      "city": "Dublin",
+      "area": "Dublin 2",
+      "listingName": "Adelaide Road, 7, Dublin",
+      "numBedroom": "2",
+      "maxPrice": "100000",
+      "type": "buy",
+      "photo": [
+        "static/img/3.jpg",
+        "static/img/3.1.jpg",
+        "static/img/3.2.jpg"
+      ],
+      "description": "We are delighted to present an instantly appealing 4 bedroom detached bungalow with conservatory, attic room and linked garage on a mature, private, generous site, wonderfully positioned in a small development just a short stroll from Clane village and all the ingredients required for modern living.\r\nNo.18 An Crocan is a beautiful well presented residence boasting neutral decor, a host of warm welcoming features, an efficent layout and a delightful maintenance free exterior. It enjoys a private yet convenience setting adjacent to all essential amenities including shops, schools (primary and secondary), Church, restaurants, cafes, pubs, The Westgrove Hotel and a wide range of sporting and recreational facilities."
+    }
+  },
+  {
+    "id": 4,
+    "data": {
+      "address": "Amiens Street, 49-51",
+      "country": "Ireland",
+      "county": "Dublin",
+      "city": "Dublin",
+      "area": "Dublin 1",
+      "listingName": "Amiens Street, 49-51, Dublin",
+      "numBedroom": "1",
+      "maxPrice": "1200",
+      "type": "rent",
+      "photo": [
+        "static/img/4.jpg",
+        "static/img/4.1.jpg",
+        "static/img/4.2.jpg"
+      ],
+      "description": "U Citywest Demesne is a fabulous development of luxury new homes, located beside numerous amenities & schools. The redbrick Edwardian style houses take their inspiration from Dublin's redbrick streetscapes, and the Demesne has a beautiful landscaped 'village green' at the heart of the estate. The bedroom homes are all generously proportioned and are fully finished with high quality kitchens (including appliances) and bathrooms. The quality finish is complimented by bespoke U furniture and finishes throughout."
+    }
+  },
+  {
+    "id": 5,
+    "data": {
+      "address": "Annamoe Terrace, 11",
+      "country": "Ireland",
+      "county": "Dublin",
+      "city": "Dublin",
+      "area": "Dublin 7",
+      "listingName": "Annamoe Terrace, 11, Dublin",
+      "numBedroom": "2",
+      "maxPrice": "150000",
+      "type": "buy",
+      "photo": [
+        "static/img/5.jpg",
+        "static/img/5.1.jpg",
+        "static/img/5.2.jpg"
+      ],
+      "description": "We take great pleasure in bringing to the market this stunning three-bedroom family home with converted attic located at the end of a mature cul de sac in Castlecurragh Heath, Dublin 15. \r\nThis unique family home has been designer decorated with taste and flair throughout and boasts bright and spacious accommodation of c 1200 sq ft.\r\nIts southerly aspect ensures that this property is flooded with natural light which is further enhanced by its beautiful fully landscaped back garden. In turnkey condition and with a host of designer extras included in the sale this property has something for everyone. "
+    }
+  },
+  {
+    "id": 6,
+    "data": {
+      "address": "Ballybough Road, 22b",
+      "country": "Ireland",
+      "county": "Dublin",
+      "city": "Dublin",
+      "area": "Dublin 3",
+      "listingName": "Ballybough Road, 22b, Dublin",
+      "numBedroom": "2",
+      "maxPrice": "1400",
+      "type": "rent",
+      "photo": [
+        "static/img/6.jpg",
+        "static/img/6.1.jpg",
+        "static/img/6.2.jpg"
+      ],
+      "description": "We are delighted to present this high quality student accommodation complex. Available to full or part time students. Classic rooms available from €230 per week subject to availability. All bills Included (Free Wi-Fi up to 100mb). Fully furnished single bedroom with en suite situated within a shared apartment. This residence is located within a 25 minute walk to both UCD and the Michael Smurfit Business School. It also enjoys excellent transport links to Dublin City Centre via primary bus routes like the 46A and the 145. "
+    }
+  },
+  {
+    "id": 7,
+    "data": {
+      "address": "Ballyfermot Drive, 118",
+      "country": "Ireland",
+      "county": "Dublin",
+      "city": "Dublin",
+      "area": "Dublin 10",
+      "listingName": "Ballyfermot Drive, 118, Dublin",
+      "numBedroom": "3",
+      "maxPrice": "200000",
+      "type": "buy",
+      "photo": [
+        "static/img/7.jpg",
+        "static/img/7.1.jpg",
+        "static/img/7.2.jpg"
+      ],
+      "description": "A delightful 4 bed detached bungalow with a fine conservatory is being offered to the market. The original cottage dates from the early 1900 s and has been extended over the years, offering spacious family living with large open plan kitchen/living/dining with Stanley range, as well as a conservatory, sitting room with wood burning stove and study. There are four bedrooms, and the family bathroom is fully tiled and has bath and shower unit. The attic would be suitable for further conversion, subject to the necessary planning."
+    }
+  },
+  {
+    "id": 8,
+    "data": {
+      "address": "Ballymun Road, Stormanstown House",
+      "country": "Ireland",
+      "county": "Dublin",
+      "city": "Dublin",
+      "area": "Dublin 9",
+      "listingName": "Ballymun Road, Stormanstown House, Dublin",
+      "numBedroom": "2",
+      "maxPrice": "2000",
+      "type": "rent",
+      "photo": [
+        "static/img/8.jpg",
+        "static/img/8.1.jpg",
+        "static/img/8.2.jpg"
+      ],
+      "description": "Grayling Property Management are delighted to present this beautiful, bright, spacious studio apartment in the heart of the ever popular Rathmines. This apartment comprises a modern kitchen, living/dining area and separate bedroom. The modern bathroom is fitted with a power shower. The apartment features built in wardrobes to ensure ample storage. Rathmines is a vibrant and energetic village just 15 minutes walk from the city centre of Dublin. Within the village there are a wide variety of shopping, dining and entertainment conveniences including Tesco, Lidl, Swan Leisure, Blackbird and Copan to name but a few. Numerous bus routes servicing all parts of the city pass the front door while the nearest LUAS (Ranelagh) is just 12 minutes walk away.Viewing is essential to appreciate this fine property."
+    }
+  },
+  {
+    "id": 9,
+    "data": {
+      "address": "Beechwood Avenue Lower, 50",
+      "country": "Ireland",
+      "county": "Dublin",
+      "city": "Dublin",
+      "area": "Dublin 6",
+      "listingName": "Beechwood Avenue Lower, 50 , Dublin",
+      "numBedroom": "3",
+      "maxPrice": "250000",
+      "type": "buy",
+      "photo": [
+        "static/img/9.jpg",
+        "static/img/9.1.jpg",
+        "static/img/9.2.jpg"
+      ],
+      "description": "The full site extends to over 200 sq meters and the mews itself is detached from its neighbours.\r\nAny new owner might chose to occupy the house as is, or to take advantage of one of the two Planning permissions that exist for the site.\r\nThe first Planning Permission is reference 2361/17 extends the property over three storeys with four bedrooms.\r\nThe second Planning Permission is reference 2499/20. This for a property with three bedrooms within the existing two storeys, with alterations and extensions at ground floor."
+    }
+  },
+  {
+    "id": 10,
+    "data": {
+      "address": "Brainboro Terrace, 4A & 4B",
+      "country": "Ireland",
+      "county": "Dublin",
+      "city": "Dublin",
+      "area": "Dublin 8",
+      "listingName": "Brainboro Terrace, 4A & 4B, Dublin",
+      "numBedroom": "3",
+      "maxPrice": "2500",
+      "type": "rent",
+      "photo": [
+        "static/img/10.jpg",
+        "static/img/10.1.jpg",
+        "static/img/10.2.jpg"
+      ],
+      "description": "U Citywest Demesne is a fabulous development of luxury new homes, located beside numerous amenities & schools. The redbrick Edwardian style houses take their inspiration from Dublin's redbrick streetscapes, and the Demesne has a beautiful landscaped 'village green' at the heart of the estate. The  bedroom homes are all generously proportioned and are fully finished with high quality kitchens (including appliances) and bathrooms. The quality finish is complimented by bespoke U furniture and finishes throughout."
+    }
+  },
+  {
+    "id": 11,
+    "data": {
+      "address": "Cadogan Road, 18, Fairview",
+      "country": "Ireland",
+      "county": "Dublin",
+      "city": "Dublin",
+      "area": "Dublin 3",
+      "listingName": "Cadogan Road, 18, Fairview, Dublin",
+      "numBedroom": "1",
+      "maxPrice": "80000",
+      "type": "buy",
+      "photo": [
+        "static/img/11.jpg",
+        "static/img/11.1.jpg",
+        "static/img/11.2.jpg"
+      ],
+      "description": "This is a spacious three-bedroom end of terrace property with a particularly spacious front garden. New to the market this property is in excellent condition throughout, some of the special features afforded to this property are large bright living room, separate kitchen with option to extend, 3 good sized bedrooms,  off street parking for two cars to the front, South west facing."
+    }
+  },
+  {
+    "id": 12,
+    "data": {
+      "address": "Cashel Avenue, 18, Crumlin",
+      "country": "Ireland",
+      "county": "Dublin",
+      "city": "Dublin",
+      "area": "Dublin 12",
+      "listingName": "Cashel Avenue, 18, Crumlin, Dublin",
+      "numBedroom": "3",
+      "maxPrice": "3000",
+      "type": "rent",
+      "photo": [
+        "static/img/12.jpg",
+        "static/img/12.1.jpg",
+        "static/img/12.2.jpg"
+      ],
+      "description": "Grayling Property Management are delighted to present this beautiful, bright, spacious studio apartment in the heart of the ever popular Rathmines. This apartment comprises a modern kitchen, living/dining area and separate bedroom. The modern bathroom is fitted with a power shower. The apartment features built in wardrobes to ensure ample storage. Rathmines is a vibrant and energetic village just 15 minutes walk from the city centre of Dublin. Within the village there are a wide variety of shopping, dining and entertainment conveniences including Tesco, Lidl, Swan Leisure, Blackbird and Copan to name but a few. Numerous bus routes servicing all parts of the city pass the front door while the nearest LUAS (Ranelagh) is just 12 minutes walk away.Viewing is essential to appreciate this fine property."
+    }
+  },
+  {
+    "id": 13,
+    "data": {
+      "address": "Cashel Avenue, 38",
+      "country": "Ireland",
+      "county": "Dublin",
+      "city": "Dublin",
+      "area": "Dublin 12",
+      "listingName": "Cashel Avenue, 38, Dublin",
+      "numBedroom": "2",
+      "maxPrice": "120000",
+      "type": "buy",
+      "photo": [
+        "static/img/13.jpg",
+        "static/img/13.1.jpg",
+        "static/img/13.2.jpg"
+      ],
+      "description": "Sure to appeal to an array of discerning buyers, investors will realise an excellent return while the private buyer will appreciate the rare opportunity to acquire such a spacious home in a development of only 13 houses, whilst overlooking a delightful green area. There is also the benefit of a south facing private garden with patio & side access, whilst a large tarmac drive provides ample parking to the exterior.\r\nLocated just off the Gort/Galway Road, it benefits from a prime location being only minutes from the extensive amenities of Ennis town centre. A superb range of excellent schools, including access to the Ennis-Bypass are close by"
+    }
+  },
+  {
+    "id": 14,
+    "data": {
+      "address": "Chapel Avenue, 5, Irishtown",
+      "country": "Ireland",
+      "county": "Dublin",
+      "city": "Dublin",
+      "area": "Dublin 4",
+      "listingName": "Chapel Avenue, 5, Irishtown, Dublin",
+      "numBedroom": "1",
+      "maxPrice": "1000",
+      "type": "rent",
+      "photo": [
+        "static/img/14.jpg",
+        "static/img/14.1.jpg",
+        "static/img/14.2.jpg"
+      ],
+      "description": "We are delighted to present this high quality student accommodation complex. Available to full or part time students. Classic rooms available from €230 per week subject to availability. All bills Included (Free Wi-Fi up to 100mb). Fully furnished single bedroom with en suite situated within a shared apartment. This residence is located within a 25 minute walk to both UCD and the Michael Smurfit Business School. It also enjoys excellent transport links to Dublin City Centre via primary bus routes like the 46A and the 145. "
+    }
+  },
+  {
+    "id": 15,
+    "data": {
+      "address": "Chapelizod Hill Road, former Faulkners factory site",
+      "country": "Ireland",
+      "county": "Dublin",
+      "city": "Dublin",
+      "area": "Dublin 20",
+      "listingName": "Chapelizod Hill Road, former Faulkners factory site, Dublin",
+      "numBedroom": "4",
+      "maxPrice": "290000",
+      "type": "buy",
+      "photo": [
+        "static/img/15.jpg",
+        "static/img/15.1.jpg",
+        "static/img/15.2.jpg"
+      ],
+      "description": "Grayling Property Management are delighted to present this beautiful, bright, spacious studio apartment in the heart of the ever popular Rathmines. This apartment comprises a modern kitchen, living/dining area and separate bedroom. The modern bathroom is fitted with a power shower. The apartment features built in wardrobes to ensure ample storage. Rathmines is a vibrant and energetic village just 15 minutes walk from the city centre of Dublin. Within the village there are a wide variety of shopping, dining and entertainment conveniences including Tesco, Lidl, Swan Leisure, Blackbird and Copan to name but a few. Numerous bus routes servicing all parts of the city pass the front door while the nearest LUAS (Ranelagh) is just 12 minutes walk away.Viewing is essential to appreciate this fine property."
+    }
+  },
+  {
+    "id": 16,
+    "data": {
+      "address": "Chapelizod Road, 2A/B/C",
+      "country": "Ireland",
+      "county": "Dublin",
+      "city": "Dublin",
+      "area": "Dublin 8",
+      "listingName": "Chapelizod Road, 2A/B/C, Dublin",
+      "numBedroom": "2",
+      "maxPrice": "1400",
+      "type": "rent",
+      "photo": [
+        "static/img/16.jpg",
+        "static/img/16.1.jpg",
+        "static/img/16.2.jpg"
+      ],
+      "description": "Grayling Property Management are delighted to present this beautiful, bright, spacious studio apartment in the heart of the ever popular Rathmines. This apartment comprises a modern kitchen, living/dining area and separate bedroom. The modern bathroom is fitted with a power shower. The apartment features built in wardrobes to ensure ample storage. Rathmines is a vibrant and energetic village just 15 minutes walk from the city centre of Dublin. Within the village there are a wide variety of shopping, dining and entertainment conveniences including Tesco, Lidl, Swan Leisure, Blackbird and Copan to name but a few. Numerous bus routes servicing all parts of the city pass the front door while the nearest LUAS (Ranelagh) is just 12 minutes walk away.Viewing is essential to appreciate this fine property."
+    }
+  },
+  {
+    "id": 17,
+    "data": {
+      "address": "Chelsea Gardens, adj. 22/rear 89 Kincora Rd, Clontarf",
+      "country": "Ireland",
+      "county": "Dublin",
+      "city": "Dublin",
+      "area": "Dublin 4",
+      "listingName": "Chelsea Gardens, adj. 22/rear 89 Kincora Rd, Clontarf, Dublin",
+      "numBedroom": "5",
+      "maxPrice": "260000",
+      "type": "buy",
+      "photo": [
+        "static/img/17.jpg",
+        "static/img/17.1.jpg",
+        "static/img/17.2.jpg"
+      ],
+      "description": "A delightful 4 bed detached bungalow with a fine conservatory is being offered to the market. The original cottage dates from the early 1900 s and has been extended over the years, offering spacious family living with large open plan kitchen/living/dining with Stanley range, as well as a conservatory, sitting room with wood burning stove and study. There are four bedrooms, and the family bathroom is fully tiled and has bath and shower unit. The attic would be suitable for further conversion, subject to the necessary planning."
+    }
+  },
+  {
+    "id": 18,
+    "data": {
+      "address": "Clonliffe Road, 198",
+      "country": "Ireland",
+      "county": "Dublin",
+      "city": "Dublin",
+      "area": "Dublin 3",
+      "listingName": "Clonliffe Road, 198, Dublin",
+      "numBedroom": "1",
+      "maxPrice": "800",
+      "type": "rent",
+      "photo": [
+        "static/img/18.jpg",
+        "static/img/18.1.jpg",
+        "static/img/18.2.jpg"
+      ],
+      "description": "Grayling Property Management are delighted to present this beautiful, bright, spacious studio apartment in the heart of the ever popular Rathmines. This apartment comprises a modern kitchen, living/dining area and separate bedroom. The modern bathroom is fitted with a power shower. The apartment features built in wardrobes to ensure ample storage. Rathmines is a vibrant and energetic village just 15 minutes walk from the city centre of Dublin. Within the village there are a wide variety of shopping, dining and entertainment conveniences including Tesco, Lidl, Swan Leisure, Blackbird and Copan to name but a few. Numerous bus routes servicing all parts of the city pass the front door while the nearest LUAS (Ranelagh) is just 12 minutes walk away.Viewing is essential to appreciate this fine property."
+    }
+  },
+  {
+    "id": 19,
+    "data": {
+      "address": "Coolock Drive/Greencastle Road",
+      "country": "Ireland",
+      "county": "Dublin",
+      "city": "Dublin",
+      "area": "Dublin 17",
+      "listingName": "Coolock Drive/Greencastle Road, Dublin",
+      "numBedroom": "5",
+      "maxPrice": "280000",
+      "type": "buy",
+      "photo": [
+        "static/img/19.jpg",
+        "static/img/19.1.jpg",
+        "static/img/19.2.jpg"
+      ],
+      "description": "Grayling Property Management are delighted to present this beautiful, bright, spacious studio apartment in the heart of the ever popular Rathmines. This apartment comprises a modern kitchen, living/dining area and separate bedroom. The modern bathroom is fitted with a power shower. The apartment features built in wardrobes to ensure ample storage. Rathmines is a vibrant and energetic village just 15 minutes walk from the city centre of Dublin. Within the village there are a wide variety of shopping, dining and entertainment conveniences including Tesco, Lidl, Swan Leisure, Blackbird and Copan to name but a few. Numerous bus routes servicing all parts of the city pass the front door while the nearest LUAS (Ranelagh) is just 12 minutes walk away.Viewing is essential to appreciate this fine property."
+    }
+  }
+]

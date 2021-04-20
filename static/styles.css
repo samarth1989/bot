@@ -1,0 +1,701 @@
+html {
+    box-sizing: border-box;
+    font-family: arial, helvetica, sans-serif;
+}
+
+body {
+    background: #f4f4f4 !important;
+}
+
+img {
+    max-width: 100%;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+.container > * {
+    padding: 10px;
+}
+/* Button used to open the chat form - fixed at the bottom of the page */
+.open-button {
+    background-color: #555;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    opacity: 0.8;
+    position: fixed;
+    bottom: 23px;
+    right: 28px;
+    width: 280px;
+  }
+  
+  /* The popup chat - hidden by default */
+  .chat-popup {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    border-radius: 10px;
+    right: 15px;
+    z-index: 9;
+    background: white;
+    border:2px solid #555;
+  }
+  .form-container {
+    max-width: 300px;
+    padding: 10px;
+    background-color: white;
+  }
+  
+  
+  
+  /* Full-width textarea */
+  .form-container textarea {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    background: #f1f1f1;
+    /*resize: none;*/
+    min-height: 80px;
+  }
+  
+  /* When the textarea gets focus, do something */
+  .form-container textarea:focus {
+    background-color: #ddd;
+    
+  }
+  
+  /* Set a style for the submit/send button */
+  .form-container .btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 14px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+    opacity: 0.8;
+    border-radius: 10px;
+  }
+  
+  /* Setting styles for the Text box*/
+  .form-container .msg {
+    margin-bottom: 10px;
+    border-radius: 5px;
+    padding: 8px 12px;
+    background-image: url();
+    width: 100%;
+    font-family: cursive;
+  }
+  
+  /* Add a red background color to the cancel button */
+  .form-container .cancel {
+    background-color: blueviolet;
+    border-radius: 10px;
+  }
+  
+  
+  /* Add some hover effects to buttons */
+  .form-container .btn:hover, .open-button:hover {
+    opacity: 1;
+  }
+  
+  .form-container {
+    max-width: 300px;
+    padding: 10px;
+    background-color: white;
+  }
+  
+  
+  
+  /* Full-width textarea */
+  .form-container textarea {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    background: #f1f1f1;
+    /*resize: none;*/
+    min-height: 80px;
+  }
+  
+  /* When the textarea gets focus, do something */
+  .form-container textarea:focus {
+    background-color: #ddd;
+    
+  }
+  
+  /* Set a style for the submit/send button */
+  .form-container .btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 14px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+    opacity: 0.8;
+    border-radius: 10px;
+  }
+  
+  /* Setting styles for the Text box*/
+  .form-container .msg {
+    margin-bottom: 10px;
+    border-radius: 5px;
+    padding: 8px 12px;
+    background-image: url();
+    width: 100%;
+    font-family: cursive;
+  }
+  
+  /* Add a red background color to the cancel button */
+  .form-container .cancel {
+    background-color: blueviolet;
+    border-radius: 10px;
+  }
+  
+  
+  /* Add some hover effects to buttons */
+  .form-container .btn:hover, .open-button:hover {
+    opacity: 1;
+  }
+  
+  *
+  .Chatplug{
+      position: fixed;
+      right: 30px;
+      bottom: 0;
+      margin-bottom: 5px;
+      font-size: 80px;
+      color: blueviolet;
+      cursor: pointer;
+      z-index: 1000;
+      background-position:0 -23px ;
+      transition: .3s ease;
+    }
+  .Chatplug:hover{
+    transform: scale(0.8);
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+  }
+  .chatboxDiv
+  {
+    overflow-y: scroll;
+      border-radius: 5px;
+      margin-right: 5px;
+      margin-left: 5px;
+      border-color: #555;
+      margin-top: 5px;
+      height: 250px;
+      width: 300px;
+  }
+  .chatbox__header {
+    width: 100%;
+      height: 50px;
+      background: blueviolet;
+      border-radius: 5px 5px 0 0;
+      padding-top: 10px;
+      text-align: center;
+      color: white;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      font-size: large;
+  }
+  
+  
+  .quickReplies {
+    padding: 5px;
+    position: relative;
+    width: 100%;
+    transition: all 0.2s;
+    transform: scale(0.98);
+    will-change: transform;
+    user-select: none;
+    cursor: pointer;
+    scroll-behavior: smooth;
+  }
+  
+  .quickReplies::-webkit-scrollbar {
+    width: 0 !important;
+  }
+  
+  .quickReplies.active {
+    cursor: grabbing;
+    cursor: -webkit-grabbing;
+    transform: scale(1);
+  }
+  
+  .chip {
+    background-color: white;
+    border: 1px solid#a155e8;
+    color: #a155e8;
+    font-weight: bolder;
+    text-align: center;
+    border-radius: 10px;
+    margin: 5px;
+    min-height: 40px;
+    line-height: 25pt;
+  }
+  
+  .chip:hover {
+    background-color: #a155e8;
+    color: white;
+  }
+  
+  
+  .chats {
+    /* display: none; */
+    padding: 2px;
+    border-radius: 1px;
+    overflow-y: scroll;
+    margin-top: 1px;
+    transition: 0.2s;
+    max-height: 150px;
+  }
+  
+  div.chats::-webkit-scrollbar {
+    overflow-y: hidden;
+    width: 0px;
+    /* remove scrollbar space /
+      background: transparent;
+      / optional: just make scrollbar invisible */
+  }
+  .userAvatar {
+    animation: animateElement linear 0.3s;
+    animation-iteration-count: 1;
+    border-radius: 50%;
+    width: 1.5em;
+    height: 1.5em;
+    float: left;
+    margin-right: 5px;
+    /* border: 2px solid  #060DCF ; */
+  }
+.lblDiv{
+    text-align:center;
+}
+.lblMsg {
+    color: red !important;
+    line-height: 40px;
+    font-size: larger;
+    visibility: visible;
+    font-family: century gothic;
+}
+
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+/* li {
+	float: left;
+  } */
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+    li a:hover:not(.active) {
+        background-color: #111;
+    }
+
+.active {
+    background-color: #4CAF50;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 10px;
+}
+
+.dropdown {
+    background-color: #333;
+    color: white;
+    width: 30%;
+    margin: auto;
+    border-radius: 10px;
+    border: 1px solid black;
+    text-align: center;
+}
+
+.ddType {
+    width: 50%;
+    float: left;
+}
+
+.ddPrice {
+    width: 50%;
+    float: left;
+}
+
+.dd {
+    border-radius: 10px;
+    width: 100px;
+    padding-left: 5px;
+    outline: none;
+    border: none;
+}
+
+.contentDiv {
+    background: white;
+    padding: 10px;
+    width: 80%;
+    margin: auto;
+    border-radius: 10px;
+    border: 1px solid grey;
+    box-shadow: 0px 0px 20px 0px cornflowerblue;
+}
+
+.imgDiv {
+    width: 80%;
+    height: 500px;
+    margin: auto;
+    border-radius: 10px;
+}
+
+    .imgDiv img {
+        height: 400px;
+        width: 100%;
+        border-radius: 10px;
+    }
+
+.footer {
+    background: #333;
+    width: 100%;
+    margin-bottom: 10px;
+    color: white;
+    text-align: left;
+    padding: 20px;
+    font-family: century gothic;
+}
+/*  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    
+} */
+.container > * {
+    grid-column: 1 / span 12;
+}
+/**/
+@media (min-width: 600px) {
+    .links {
+        grid-column: 1 / span 3;
+        grid-row: 2;
+    }
+
+    .content, .footer {
+        /*grid-column: 4 / span 9;*/
+    }
+    /* nav ul {
+         display: flex; 
+        justify-content: space-evenly; 
+
+    } */
+}
+
+@media (min-width: 900px) {
+    .links {
+        grid-column: 1 / span 2;
+    }
+
+    .content {
+        grid-column: 3 / span 7;
+    }
+
+    .footer {
+        grid-column: 1 / span 12;
+    }
+}
+
+.container {
+    max-width: 1200px;
+    min-width: 100%;
+}
+
+.rightalignIL {
+    float: right;
+}
+
+.leftalignIL {
+    float: left;
+}
+
+.dropdown a:hover {
+    background-color: #ddd;
+}
+
+.show {
+    display: block;
+}
+/* Start details page */
+
+.content {
+    float: right;
+}
+
+.panelbox {
+    float: right;
+}
+
+@media (max-width: 1200px) {
+
+
+    .contentDiv {
+        background: white;
+        padding: 10px;
+        width: 80%;
+        margin: auto;
+        box-shadow: 0px 0px 20px 0px cornflowerblue;
+    }
+
+    .dropdown {
+        width: 100%;
+    }
+
+    .ddType {
+        width: 100%;
+    }
+
+    .ddPrice {
+        width: 100%;
+    }
+
+    .dd {
+        width: 80%;
+    }
+
+    .imgDiv {
+        width: 100%;
+        height: 500px;
+        margin: auto;
+        border-radius: 10px;
+    }
+
+        .imgDiv img {
+            height: 400px;
+            width: 100%;
+            border-radius: 10px;
+        }
+}
+/* Compatible for tablet devices since the max-width is 900px* All the columns are resizing to 100% width */
+@media (max-width: 900px) {
+    .dropdown {
+        width: 100%;
+    }
+
+    .ddType {
+        width: 100%;
+    }
+
+    .ddPrice {
+        width: 100%;
+    }
+
+    .dd {
+        width: 80%;
+    }
+
+    .contentDiv {
+        background: white;
+        padding: 10px;
+        width: 100%;
+        margin: auto;
+        box-shadow: 0px 0px 20px 0px cornflowerblue;
+    }
+
+    .leftcolumn {
+        float: left;
+        width: 100%;
+        /* padding: 15px;  */
+    }
+
+    .rightcolumn {
+        float: left;
+        width: 100%;
+    }
+
+    .imgDiv {
+        width: 100%;
+        height: 350px;
+        margin: auto;
+        border-radius: 10px;
+    }
+
+        .imgDiv img {
+            height: 250px;
+            width: 100%;
+            border-radius: 10px;
+        }
+}
+/* Compatible for mobile devices since the max-width is 600px* All the columns are resizing to 100% width */
+@media (max-width: 600px) {
+    .leftcolumn {
+        float: left;
+        width: 100%;
+        /* padding: 15px;  */
+    }
+
+    .rightcolumn {
+        float: left;
+        width: 100%;
+    }
+
+    .contentDiv {
+        background: white;
+        padding: 10px;
+        width: 100%;
+        margin: auto;
+        box-shadow: 0px 0px 20px 0px cornflowerblue;
+    }
+
+    .dropdown {
+        width: 100%;
+    }
+
+    .ddType {
+        width: 100%;
+    }
+
+
+    .ddPrice {
+        width: 100%;
+    }
+
+    .dd {
+        width: 60%;
+    }
+
+    .imgDiv {
+        width: 100%;
+        height: 250px;
+        margin: auto;
+        border-radius: 10px;
+    }
+
+        .imgDiv img {
+            height: 150px;
+            width: 100%;
+            border-radius: 10px;
+        }
+}
+
+@media (max-width: 320px) {
+    .leftcolumn {
+        float: left;
+        width: 100%;
+        /* padding: 15px;  */
+    }
+
+    .rightcolumn {
+        float: left;
+        width: 100%;
+    }
+
+    .contentDiv {
+        background: white;
+        padding: 10px;
+        width: 100%;
+        margin: auto;
+        box-shadow: 0px 0px 20px 0px cornflowerblue;
+    }
+
+    .dropdown {
+        width: 100%;
+    }
+
+    .ddType {
+        width: 100%;
+    }
+
+
+    .ddPrice {
+        width: 100%;
+    }
+
+    .dd {
+        width: 50%;
+    }
+
+    .imgDiv {
+        width: 100%;
+        height: 300px;
+        margin: auto;
+        border-radius: 10px;
+    }
+
+        .imgDiv img {
+            height: 150px;
+            width: 100%;
+            border-radius: 10px;
+        }
+}
+
+
+.leftcolumn {
+    float: left;
+    width: 100%;
+    padding: 0%;
+}
+
+.rightcolumn {
+    float: left;
+    width: 100%;
+    padding: 0%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    /* display: table; */
+    clear: both;
+}
+
+.row > * {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.mySlides {
+    display: none;
+    width: 100%;
+}
+
+.buttonnn {
+    color: #009688;
+    background: #fff;
+    border: 1px solid #009688;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 7px 12px;
+    font-weight: normal;
+    margin: auto;
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    width: 100%;
+    border-radius: 10px;
+}
+
+    .buttonnn:hover, .buttonnn:active {
+        color: #fff;
+        background: #009688;
+        text-decoration: none;
+    }
+
+input {
+    border-radius: .375rem;
+    margin-top: .25rem;
+    box-shadow: 0 0 #0000, 0 0 #0000, 0 1px 2px 0 rgb(0 0 0 / 5%);
+    border-color: #bbb;
+    width: 100%;
+}
