@@ -7,10 +7,29 @@ conversations:
     Under 1500\n
     Under 2000\n
     Under 2500
+- - Under 500
+  - "R-500"
+- - Under 1000
+  - "R-1000"   
+- - Under 1500
+  - "R-1500" 
+- - Under 2000
+  - "R-2000"
+- - Under 2500
+  - "R-2500"           
 - - Buy
   - Under 50000\n 
     Under 100000\n 
     Under 150000\n
     Under 200000\n
     Under 250000    
-
+- - Under 50000
+  - "B-50000"
+- - Under 100000
+  - "B-100000"   
+- - Under 150000
+  - "B-150000" 
+- - Under 200000
+  - "B-200000"
+- - Under 250000
+  - "B-250000"

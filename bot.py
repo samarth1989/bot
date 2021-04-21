@@ -1,6 +1,7 @@
 from flask import Flask,render_template,request
 from chatterbot import ChatBot
 from chatterbot.trainers import ChatterBotCorpusTrainer
+from flask import session, url_for
 
 app = Flask(__name__) 
 english_bot = ChatBot("Chatterbot",storage_adapter="chatterbot.storage.SQLStorageAdapter")
@@ -18,8 +19,17 @@ def get_bot_response():
      userText = request.args.get("msg") #get data from input,we write js  to index.html
      txt=english_bot.get_response(userText)
      return str(txt)
-     
-     
+
+@app.route("/details")
+def detailspage():
+     id=request.args.get("id",default="1",type=str)
+     return render_template('housedetails.html') 
+
+@app.route("/appointment")
+def appointmentpage():
+     id=request.args.get("id",default="1",type=str)
+     return render_template('appointment.html')           
+
 if __name__ == "__main__":
-     app.run(debug = True)
+     app.run()
  

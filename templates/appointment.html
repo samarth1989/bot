@@ -2,14 +2,12 @@
 <html lang="en">
 
 <head>
-    <title>Accomodation</title>
+    <title>Appointment</title>
     <meta charset="UTF-8">
     <link href="static/styles.css" rel="stylesheet" type="text/css">
     <meta content="width=device-width, initial-scale=1" name="viewport">
-    <script src="https://kit.fontawesome.com/e09918d621.js" crossorigin="*"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="static/js/loadhome.js"></script>
 </head>
+
 <body>
     <div class="container">
         <nav class="navigation">
@@ -23,11 +21,45 @@
             </ul>
         </nav>
 
-        <article class="">
-            <div id="mydiv" class="contentDiv">
+
+        <form name="myForm" action="home.html" onsubmit="return validateForm()" method="get">
+            <div id="toast"> Appointment Booked</div>
+            <fieldset>
+                <legend>Book Appointment</legend>
+                <label>
+                    Name
+                </label>
+                <input type="text" name="name" class="textt" placeholder="Ryan Reynolds">
+                <div>
+                    <label>
+                        Email address
+                    </label>
+                    <input type="email" name="email" class="textt" placeholder="me@example.com">
+
+                    <label>
+                        Phone number
+                    </label>
+                    <input type="tel" name="phone" class="textt" title="Enter 8 or 10 digits for a valid phone number"
+                        placeholder="0897777777 or 016666666" pattern="[0-9]{10}|[0-9]{8}">
+                </div>
+            </fieldset>
+            <fieldset>
+                <div>
+                    <label>
+                        Date
+                    </label>
+                    <input type="date" class="textt" name="date">
+
+                </div>
+
+            </fieldset>
+            <br />
+            <div>
+                <input type="submit" value="Submit" class="buttonnn">
             </div>
 
-        </article>
+        </form>
+
         <footer id="foot" class="footer">
             45 Amiens Street<br />
             Near Connolly Station<br />
@@ -53,7 +85,53 @@
             </div>
         </div>
     </div>
+
     <script>
+
+    </script>
+
+    <script data-require="jquery@2.1.4" data-semver="2.1.4" src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="*">
+
+
+    <script type="text/javascript">
+
+        function validateForm() {
+            var x = document.forms["myForm"]["name"].value;
+            if (x == "") {
+                alert("Name must be filled out");
+                return false;
+            }
+            var y = document.forms["myForm"]["email"].value;
+            if (y == "") {
+                alert("Email must be filled out");
+                return false;
+            }
+            var z = document.forms["myForm"]["phone"].value;
+            if (z == "") {
+                alert("Please enter your number");
+                return false;
+            }
+            var d = document.forms["myForm"]["date"].value;
+            if (d == "") {
+                alert("Please select a Date");
+                return false;
+            }
+            if (x != "" && y != "" && z != "" && d != "") {
+                //var x = document.getElementById("toast");
+                //x.className = "show";
+                //setTimeout(function () {
+                //    x.className = x.className.replace("show", "");
+                //}, 5000);
+                alert("Appointment Booked");
+            }
+            else {
+                return false;
+            }
+        }
         var type = "";
         var amount = "";
         function showQuickReplies() {
@@ -190,9 +268,8 @@
                 }
             });
         }
+
     </script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="*">
 </body>
 
 </html>

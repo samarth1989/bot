@@ -2,14 +2,20 @@
 <html lang="en">
 
 <head>
-    <title>Accomodation</title>
+    <title>House Details</title>
     <meta charset="UTF-8">
     <link href="static/styles.css" rel="stylesheet" type="text/css">
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <script src="https://kit.fontawesome.com/e09918d621.js" crossorigin="*"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="static/js/loadhome.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <!-- Bootstrap CSS -->
+    <script data-require="jquery@2.1.4" data-semver="2.1.4" src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="static/js/loadhousedetails.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="*">
 </head>
+
 <body>
     <div class="container">
         <nav class="navigation">
@@ -22,12 +28,16 @@
                 </li>
             </ul>
         </nav>
+        <div class="">
 
-        <article class="">
-            <div id="mydiv" class="contentDiv">
+            <div class="w3-content w3-display-container" id="c123">
+                <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+                <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
             </div>
 
-        </article>
+            <div class="rightcolumn" id="c1234">
+            </div>
+        </div>
         <footer id="foot" class="footer">
             45 Amiens Street<br />
             Near Connolly Station<br />
@@ -38,13 +48,11 @@
         <div id="divimg" class="Chatplug">
             <i class="far fa-comments" onclick="openForm()"></i>
         </div>
-
         <div class="chat-popup" id="myForm">
             <div class="chatbox__header">
                 🏡Property Chat Helper
             </div>
             <div id="chatbox" class="chatboxDiv"></div>
-
             <div class="form-container" style=" border-radius: 5px; ">
                 <div class="chats" id="chats">
                     <div class="clearfix"></div>
@@ -53,7 +61,7 @@
             </div>
         </div>
     </div>
-    <script>
+    <script type="text/javascript">
         var type = "";
         var amount = "";
         function showQuickReplies() {
@@ -128,7 +136,7 @@
             document.getElementById("divimg").style.display = "none";
             document.getElementById("chatbox").innerHTML = "";
             document.getElementById("chats").innerHTML = "";
-            var initialText = "Hello Welcome to Buy or Rent. What would you like to do?";
+            var initialText = "Hello Welcome to Buy and Rent. Would you like to see other properties?";
             var userHtml = '<p class = "userText"><span>' + initialText + '</span></p>';
             $("#chatbox").append(userHtml);
             var quickRepliesData = ['Rent', 'Buy']
@@ -156,7 +164,7 @@
                     if (data.startsWith("R-")) {
                         type = "rent";
                         amount = data.split('-')[1];
-                        const chip = `<div class="chip">Click Me To View Results</div>`;
+                        const chip = `<div class="chip">Click To View Results</div>`;
                         chips += chip;
                         const quickReplies = `<div class="quickReplies">${chips}</div><div class="clearfix"></div>`;
                         $(quickReplies).appendTo(".chats").fadeIn(1000);
@@ -166,7 +174,7 @@
                     else {
                         type = "buy";
                         amount = data.split('-')[1];
-                        const chip = `<div class="chip">Click Me To View Results</div>`;
+                        const chip = `<div class="chip">Click To View Results</div>`;
                         chips += chip;
                         const quickReplies = `<div class="quickReplies">${chips}</div><div class="clearfix"></div>`;
                         $(quickReplies).appendTo(".chats").fadeIn(1000);
@@ -191,8 +199,6 @@
             });
         }
     </script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="*">
 </body>
 
 </html>
