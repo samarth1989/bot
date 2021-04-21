@@ -6,6 +6,13 @@
     <meta charset="UTF-8">
     <link href="static/styles.css" rel="stylesheet" type="text/css">
     <meta content="width=device-width, initial-scale=1" name="viewport">
+    <script src="https://kit.fontawesome.com/e09918d621.js" crossorigin="*"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <!-- Bootstrap CSS -->
+    <script data-require="jquery@2.1.4" data-semver="2.1.4" src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="*">
 </head>
 
 <body>
@@ -85,20 +92,8 @@
             </div>
         </div>
     </div>
-
-    <script>
-
-    </script>
-
-    <script data-require="jquery@2.1.4" data-semver="2.1.4" src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="*">
-
-
+  
     <script type="text/javascript">
-
         function validateForm() {
             var x = document.forms["myForm"]["name"].value;
             if (x == "") {
@@ -150,20 +145,28 @@
         // on click of quickreplies, get the payload value and send
         $(document).on("click", ".quickReplies .chip", function () {
             const text = this.innerText;
-            if (text == "Click Me To View Results") {
-                $.getJSON("static/property_complete.json",
-                    function (jsonData) {
-                        debugger;
-                        filteredJson = jsonData.filter(item => (item.data.type.toLowerCase() == type));
-                        filteredJson = filteredJson.filter(item => (parseInt(item.data.maxPrice) < parseInt(amount)));
-                        //console.log(filteredJson.length);
-                        $("#mydiv").html("");
-                        chatProps(filteredJson);
-                        $(".quickReplies").remove();
-                        var initialText = "Thank You for contacting us :)";
-                        var userHtml = '<p class = "userText"><span>' + initialText + '</span></p>';
-                        $("#chatbox").append(userHtml);
-                    })
+            if (text == "Click To View Results") {
+                window.open("/filter?typee=" + type + "&price=" + amount + "", '_blank').focus();
+                $(".quickReplies").remove();
+                var initialText = "Do you need more assistance?";
+                var userHtml = '<p class = "userText"><span>' + initialText + '</span></p>';
+                $("#chatbox").append(userHtml);
+                var quickRepliesData = ['Yes', 'No']
+                let chips = "";
+                for (let i = 0; i < quickRepliesData.length; i += 1) {
+                    const chip = `<div class="chip" data-payload='${quickRepliesData[i]}'>${quickRepliesData[i]}</div>`;
+                    chips += chip;
+                }
+                const quickReplies = `<div class="quickReplies">${chips}</div><div class="clearfix"></div>`;
+                $(quickReplies).appendTo(".chats").fadeIn(1000);
+                const terminalResultsDiv = document.getElementById("chats");
+                terminalResultsDiv.scrollTop = terminalResultsDiv.scrollHeight;
+            }
+            else if(text=="Thank You for contacting us! Have a nice day :)")
+            {
+                $(".quickReplies").remove();
+                var userHtml = '<p class = "userText"><span>' + text + '</span></p>';
+                $("#chatbox").append(userHtml);
             }
             else {
                 const payload = this.getAttribute("data-payload");
@@ -234,7 +237,7 @@
                     if (data.startsWith("R-")) {
                         type = "rent";
                         amount = data.split('-')[1];
-                        const chip = `<div class="chip">Click Me To View Results</div>`;
+                        const chip = `<div class="chip">Click To View Results</div>`;
                         chips += chip;
                         const quickReplies = `<div class="quickReplies">${chips}</div><div class="clearfix"></div>`;
                         $(quickReplies).appendTo(".chats").fadeIn(1000);
@@ -244,7 +247,7 @@
                     else {
                         type = "buy";
                         amount = data.split('-')[1];
-                        const chip = `<div class="chip">Click Me To View Results</div>`;
+                        const chip = `<div class="chip">Click To View Results</div>`;
                         chips += chip;
                         const quickReplies = `<div class="quickReplies">${chips}</div><div class="clearfix"></div>`;
                         $(quickReplies).appendTo(".chats").fadeIn(1000);
@@ -268,7 +271,6 @@
                 }
             });
         }
-
     </script>
 </body>
 

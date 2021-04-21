@@ -1,7 +1,6 @@
 from flask import Flask,render_template,request
 from chatterbot import ChatBot
 from chatterbot.trainers import ChatterBotCorpusTrainer
-from flask import session, url_for
 
 app = Flask(__name__) 
 english_bot = ChatBot("Chatterbot",storage_adapter="chatterbot.storage.SQLStorageAdapter")
@@ -13,6 +12,12 @@ trainer.train("data/data.yml")
 @app.route("/")
 def index():
      return render_template("home.html") #to send context to html
+
+@app.route("/filter")
+def filter():
+     type_1=request.args.get("typee",default="rent",type=str)
+     price=request.args.get("price",default="rent",type=str)
+     return render_template("filterhome.html") #to send context to html
 
 @app.route("/get")
 def get_bot_response():

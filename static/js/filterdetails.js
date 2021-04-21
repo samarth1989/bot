@@ -1,12 +1,28 @@
+
+
+var price = parseInt(getParameterByName('price'));
+var typee = getParameterByName('typee');
+
+//console.log(propId);
+
 $(document).ready(function () {
-    var jsonData = '';
-    // FETCHING jsonData FROM JSON FILE 
+
+    var dataJson = '';
+    // FETCHING DATA FROM JSON FILE 
     $.getJSON("static/property_complete.json",
         function (jsonData) {
-            arrangeProps(jsonData)
+            debugger;
+            filteredJson = jsonData.filter(item => (item.data.type.toLowerCase() == typee));
+            filteredJson = filteredJson.filter(item => (parseInt(item.data.maxPrice) < price));
+            //console.log(filteredJson.length);
+            $("#mydiv").html("");
+            chatProps(filteredJson);
+            $(".quickReplies").remove();
+            var initialText = "Thank You for contacting us :)";
+            var userHtml = '<p class = "userText"><span>' + initialText + '</span></p>';
+            $("#chatbox").append(userHtml);
         })
 });
-//Making dynamic html code using the json data
 function chatProps(jsonData) {
     if (jsonData.length > 0) {
         for (var i = 0; i < jsonData.length; i++) {
@@ -49,4 +65,13 @@ function arrangeProps(jsonData) {
     }
 }
 
+function getParameterByName(name, url = window.location.href) {
 
+    //capture the query string params
+    name = name.replace(/[\[\]]/g, '\\$&');
+    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return (decodeURIComponent(results[2].replace(/\+/g, ' ')));
+}

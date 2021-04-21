@@ -1,6 +1,11 @@
 categories:
 - conversations
 conversations:
+- - "Yes"
+  - Rent\n
+    Buy
+- - "No"
+  - Thank You for contacting us! Have a nice day :)    
 - - Rent
   - Under 500\n  
     Under 1000\n 
