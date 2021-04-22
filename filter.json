@@ -1,0 +1,23 @@
+//Data file for backend process of YML
+
+{
+    "categories": [
+       "conversations"
+    ],
+    "conversations": [
+       "- \"Yes\"\n- Rent\\n\n  Buy",
+       "- \"No\"\n- Thank You for contacting us! Have a nice day :)",
+       "- Rent\n- Under 500\\n  \n  Under 1000\\n \n  Under 1500\\n\n  Under 2000\\n\n  Under 2500",
+       "- Under 500\n- \"R-500\"",
+       "- Under 1000\n- \"R-1000\"",
+       "- Under 1500\n- \"R-1500\"",
+       "- Under 2000\n- \"R-2000\"",
+       "- Under 2500\n- \"R-2500\"",
+       "- Buy\n- Under 50000\\n \n  Under 100000\\n \n  Under 150000\\n\n  Under 200000\\n\n  Under 250000",
+       "- Under 50000\n- \"B-50000\"",
+       "- Under 100000\n- \"B-100000\"",
+       "- Under 150000\n- \"B-150000\"",
+       "- Under 200000\n- \"B-200000\"",
+       "- Under 250000\n- \"B-250000\""
+    ]
+ }
