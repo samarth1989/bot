@@ -74,7 +74,7 @@
         $(document).on("click", ".quickReplies .chip", function () {
             const text = this.innerText;
             if (text == "Click To View Results") {
-                window.open("/filter?typee=" + type + "&price=" + amount + "", '_blank').focus();
+                window.open("/filter?type=" + type + "&price=" + amount + "", '_blank').focus();
                 $(".quickReplies").remove();
                 var initialText = "Do you need more assistance?";
                 var userHtml = '<p class = "userText"><span>' + initialText + '</span></p>';

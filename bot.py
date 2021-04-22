@@ -15,7 +15,7 @@ def index():
 
 @app.route("/filter")
 def filter():
-     type_1=request.args.get("typee",default="rent",type=str)
+     type_1=request.args.get("type",default="rent",type=str)
      price=request.args.get("price",default="rent",type=str)
      return render_template("filterhome.html") #to send context to html
 

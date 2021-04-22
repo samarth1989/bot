@@ -1,7 +1,7 @@
 
 
 var price = parseInt(getParameterByName('price'));
-var typee = getParameterByName('typee');
+var typee = getParameterByName('type');
 
 //console.log(propId);
 
