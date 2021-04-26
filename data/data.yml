@@ -1,6 +1,7 @@
 categories:
 - conversations
 conversations:
+<<<<<<< HEAD
 - - "Yes"
   - Rent\n
     Buy
@@ -38,3 +39,11 @@ conversations:
   - "B-200000"
 - - Under 250000
   - "B-250000"
+=======
+- - Rent
+  - Under 500 or 1000 or 1500 or 2000 or 2500?
+    Thanks for contacting us :)
+- - Buy
+  - Under 500 or 1000 or 1500 or 2000 or 2500?
+    Thanks for contacting us :)    
+>>>>>>> origin/main

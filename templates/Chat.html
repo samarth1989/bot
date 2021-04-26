@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://kit.fontawesome.com/e09918d621.js" crossorigin="*"></script>
+<script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+/* Button used to open the chat form - fixed at the bottom of the page */
+.open-button {
+  background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 280px;
+}
+
+/* The popup chat - hidden by default */
+.chat-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  border-radius: 10px;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 15px;
+  height: 220px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(201, 192, 192); 
+  border-radius: 10px;
+  margin-right: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(201,192,192); 
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+
+
+
+/* Full-width textarea */
+.form-container textarea {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  background: #f1f1f1;
+  /*resize: none;*/
+  min-height: 80px;
+}
+
+/* When the textarea gets focus, do something */
+.form-container textarea:focus {
+  background-color: #ddd;
+  
+}
+
+/* Set a style for the submit/send button */
+.form-container .btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 14px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 10px;
+  opacity: 0.8;
+  border-radius: 10px;
+}
+
+/* Setting styles for the Text box*/
+.form-container .msg {
+  margin-bottom: 10px;
+  border-radius: 5px;
+  padding: 8px 12px;
+  background-image: url();
+  width: 100%;
+  font-family: cursive;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: blueviolet;
+  border-radius: 10px;
+}
+
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+
+*
+.Chatplug{
+    position: fixed;
+    right: 30px;
+    bottom: 0;
+    margin-bottom: 5px;
+    font-size: 80px;
+    color: blueviolet;
+    cursor: pointer;
+    z-index: 1000;
+    background-position:0 -23px ;
+    transition: .3s ease;
+  }
+.Chatplug:hover{
+  transform: scale(0.8);
+  -webkit-transform: scale(0.8);
+  -ms-transform: scale(0.8);
+}
+.chatboxDiv
+{
+  overflow-y: scroll;
+    border-radius: 5px;
+    margin-right: 5px;
+    margin-left: 5px;
+    border-color: #555;
+    margin-top: 5px;
+    height: 250px;
+    width: 300px;
+}
+.chatbox__header {
+  width: 100%;
+    height: 50px;
+    background: blueviolet;
+    border-radius: 5px 5px 0 0;
+    padding-top: 10px;
+    text-align: center;
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: large;
+}
+
+
+.quickReplies {
+  padding: 5px;
+  position: relative;
+  width: 100%;
+  transition: all 0.2s;
+  transform: scale(0.98);
+  will-change: transform;
+  user-select: none;
+  cursor: pointer;
+  scroll-behavior: smooth;
+}
+
+.quickReplies::-webkit-scrollbar {
+  width: 0 !important;
+}
+
+.quickReplies.active {
+  cursor: grabbing;
+  cursor: -webkit-grabbing;
+  transform: scale(1);
+}
+
+.chip {
+  background-color: white;
+  border: 1px solid#70bf73;
+  color: #70bf73;
+  font-weight: bolder;
+  text-align: center;
+  border-radius: 10px;
+  margin: 5px;
+}
+
+.chip:hover {
+  background-color: #70bf73;
+  color: white;
+}
+
+
+.chats {
+  /* display: none; */
+  padding: 2px;
+  border-radius: 1px;
+  overflow-y: scroll;
+  margin-top: 1px;
+  transition: 0.2s;
+}
+
+div.chats::-webkit-scrollbar {
+  overflow-y: hidden;
+  width: 0px;
+  /* remove scrollbar space /
+    background: transparent;
+    / optional: just make scrollbar invisible */
+}
+.userAvatar {
+  animation: animateElement linear 0.3s;
+  animation-iteration-count: 1;
+  border-radius: 50%;
+  width: 1.5em;
+  height: 1.5em;
+  float: left;
+  margin-right: 5px;
+  /* border: 2px solid  #060DCF ; */
+}
+
+</style>
+</head>
+<body>
+
+<div id = "divimg" class="Chatplug">
+    <!--<button class="far fa-comments" onclick="openForm()">Chat</button> -->
+    <i class="far fa-comments"onclick="openForm()"></i>
+</div>
+
+<div class="chat-popup" id="myForm" style="border-color: #555;"> 
+  <div class="chatbox__header">
+    🏡Property Chat Helper
+  </div>
+    <div id = "chatbox" class="chatboxDiv"></div>
+
+    <div class="form-container" style=" border-radius: 5px; "> 
+     
+    <!--<label for="msg"><b>Message</b></label>
+    <textarea placeholder="Type message.." name="msg" required></textarea>-->
+        <!--Chatbot contents goes here -->
+        <div class="chats" id="chats">
+          <div class="clearfix"></div>
+        </div>
+    <!--<div id = "userInput">-->
+       <!-- <textarea id ="textInput" class="msg" type ="text" name="msg" placeholder="Please type your message "></textarea>
+        <input id = "buttonInput" class = "btn" type = "submit" value="Send"> -->
+    
+    
+   <!--<button type="button" class="btn">Send</button> --> 
+    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+<!--</div>-->
+</div>
+</div>
+
+<script>
+
+function showQuickReplies() {
+  var quickRepliesData = ['Rent','Buy']
+    let chips = "";
+    for (let i = 0; i < quickRepliesData.length; i += 1) {
+        const chip = `<div class="chip" data-payload='${quickRepliesData[i]}'>${quickRepliesData[i]}</div>`;
+        chips += chip;
+    }
+    const quickReplies = `<div class="quickReplies">${chips}</div><div class="clearfix"></div>`;
+    $(quickReplies).appendTo(".chats").fadeIn(1000);
+    
+    const terminalResultsDiv = document.getElementById("chats");
+    terminalResultsDiv.scrollTop = terminalResultsDiv.scrollHeight;
+
+  /*  const slider = document.querySelector(".quickReplies");
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    slider.addEventListener("mousedown", (e) => {
+        isDown = true;
+        slider.classList.add("active");
+        startX = e.pageX - slider.offsetLeft;
+        scrollLeft = slider.scrollLeft;
+    });
+    slider.addEventListener("mouseleave", () => {
+        isDown = false;
+        slider.classList.remove("active");
+    });
+    slider.addEventListener("mouseup", () => {
+        isDown = false;
+        slider.classList.remove("active");
+    });
+    slider.addEventListener("mousemove", (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - slider.offsetLeft;
+        const walk = (x - startX) * 3; // scroll-fast
+        slider.scrollLeft = scrollLeft - walk;
+    });*/
+}
+
+
+// on click of quickreplies, get the payload value and send
+$(document).on("click", ".quickReplies .chip", function () {
+    const text = this.innerText;
+    const payload = this.getAttribute("data-payload");
+    //console.log("chip payload: ", this.getAttribute("data-payload"));
+    setUserResponse(text);
+    getBotResponse(text);
+    $(".quickReplies").remove();
+});
+
+function setUserResponse(message) {
+    const user_response = `<img class="userAvatar" src="userAvatar.jpg"><p class="userMsg">${message} </p><div class="clearfix"></div>`;
+    $("#chatbox").append(user_response);
+    $(".usrInput").val("");
+    //scrollToBottomOfResults();
+    //showBotTyping();
+    $(".suggestions").remove();
+}
+
+</script>
+
+<script>
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+  document.getElementById("divimg").style.display = "none";
+  document.getElementById("chatbox").innerHTML = "";
+  document.getElementById("chats").innerHTML = "";
+  var initialText="Hello Welcome to Buy or Rent. What would you like to do?";
+    var userHtml = '<p class = "userText"><span>' + initialText + '</span></p>';
+    $("#textInput").val("");
+    $("#chatbox").append(userHtml);
+    var quickRepliesData = ['Rent','Buy']
+    let chips = "";
+    for (let i = 0; i < quickRepliesData.length; i += 1) {
+        const chip = `<div class="chip" data-payload='${quickRepliesData[i]}'>${quickRepliesData[i]}</div>`;
+        chips += chip;
+    }
+
+    const quickReplies = `<div class="quickReplies">${chips}</div><div class="clearfix"></div>`;
+    $(quickReplies).appendTo(".chats").fadeIn(1000);
+    
+    const terminalResultsDiv = document.getElementById("chats");
+    terminalResultsDiv.scrollTop = terminalResultsDiv.scrollHeight;
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+  document.getElementById("divimg").style.display = "block";
+}
+function getBotResponse(message){
+    var rawText = message;
+    debugger;
+    //document.getElementById('userInput').scrollIntoView({block:'start',behaviour:'smooth'});
+    $.get("/get", {msg:rawText }).done(function(data) {
+      debugger;
+      var quickRepliesData = [];
+      quickRepliesData.push(data);
+    let chips = "";
+    for (let i = 0; i < quickRepliesData.length; i += 1) {
+        const chip = `<div class="chip" data-payload='${quickRepliesData[i]}'>${quickRepliesData[i]}</div>`;
+        chips += chip;
+    }
+    const quickReplies = `<div class="quickReplies">${chips}</div><div class="clearfix"></div>`;
+    $(quickReplies).appendTo(".chats").fadeIn(1000);
+    const terminalResultsDiv = document.getElementById("chats");
+    terminalResultsDiv.scrollTop = terminalResultsDiv.scrollHeight;
+    //document.getElementById('userInput').scrollIntoView({block : 'start',behaviour:'smooth'});
+    });
+    }
+
+    $("#textInput").keypress(function(e){ 
+    if(e.which == 13) {
+    getBotResponse();
+    showQuickReplies();
+    }
+    });
+
+    $("#buttonInput").click(function() {
+    getBotResponse();
+    showQuickReplies();
+    })
+</script>
+
+</body>
+</html>
