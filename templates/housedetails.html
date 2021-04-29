@@ -68,8 +68,7 @@
             document.getElementById("chatbox").innerHTML = "";
             document.getElementById("chats").innerHTML = "";
             var initialText = "Hello Welcome to Buy or Rent. What would you like to do?";
-            var userHtml = '<p class = "userText"><span>' + initialText + '</span></p>';
-            $("#chatbox").append(userHtml);
+            setBotResponse(initialText);
             var quickRepliesData = ['Rent', 'Buy']
             let chips = "";
             for (let i = 0; i < quickRepliesData.length; i += 1) {
