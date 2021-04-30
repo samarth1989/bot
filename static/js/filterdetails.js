@@ -11,7 +11,6 @@ $(document).ready(function () {
     // FETCHING DATA FROM JSON FILE 
     $.getJSON("static/property_complete.json",
         function (jsonData) {
-            debugger;
             filteredJson = jsonData.filter(item => (item.data.type.toLowerCase() == typee));
             filteredJson = filteredJson.filter(item => (parseInt(item.data.maxPrice) < price));
             //console.log(filteredJson.length);
@@ -19,14 +18,12 @@ $(document).ready(function () {
             chatProps(filteredJson);
             $(".quickReplies").remove();
             var initialText = "Thank You for contacting us :)";
-            var userHtml = '<p class = "userText"><span>' + initialText + '</span></p>';
-            $("#chatbox").append(userHtml);
+            setBotResponse(initialText);
         })
 });
 function chatProps(jsonData) {
     if (jsonData.length > 0) {
         for (var i = 0; i < jsonData.length; i++) {
-            debugger;
             var mhtml = "";
             //console.log(jsonData[i].id);
             var alt = 'Address: ' + jsonData[i].data.address + "<br />" + ' County: ' + jsonData[i].data.county + ' Area: ' + jsonData[i].data.area + "<br />";

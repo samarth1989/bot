@@ -10,7 +10,6 @@ $(document).ready(function () {
 function chatProps(jsonData) {
     if (jsonData.length > 0) {
         for (var i = 0; i < jsonData.length; i++) {
-            debugger;
             var mhtml = "";
             //console.log(jsonData[i].id);
             var alt = 'Address: ' + jsonData[i].data.address + "<br />" + ' County: ' + jsonData[i].data.county + ' Area: ' + jsonData[i].data.area + "<br />";

@@ -91,7 +91,7 @@
             </div>
         </div>
     </div>
-  
+
     <script type="text/javascript">
         function validateForm() {
             var x = document.forms["myForm"]["name"].value;
@@ -145,11 +145,9 @@
         $(document).on("click", ".quickReplies .chip", function () {
             const text = this.innerText;
             if (text == "Click To View Results") {
-                window.open("/filter?typee=" + type + "&price=" + amount + "", '_blank').focus();
-                $(".quickReplies").remove();
+                window.open("/filter?type=" + type + "&price=" + amount + "", '_blank').focus();
                 var initialText = "Do you need more assistance?";
-                var userHtml = '<p class = "userText"><span>' + initialText + '</span></p>';
-                $("#chatbox").append(userHtml);
+                setBotResponse(initialText);
                 var quickRepliesData = ['Yes', 'No']
                 let chips = "";
                 for (let i = 0; i < quickRepliesData.length; i += 1) {
@@ -161,11 +159,9 @@
                 const terminalResultsDiv = document.getElementById("chats");
                 terminalResultsDiv.scrollTop = terminalResultsDiv.scrollHeight;
             }
-            else if(text=="Thank You for contacting us! Have a nice day :)")
-            {
+            else if (text == "Thank You for contacting us! Have a nice day :)") {
                 $(".quickReplies").remove();
-                var userHtml = '<p class = "userText"><span>' + text + '</span></p>';
-                $("#chatbox").append(userHtml);
+                setBotResponse(text);
             }
             else {
                 const payload = this.getAttribute("data-payload");
@@ -178,7 +174,6 @@
         function chatProps(jsonData) {
             if (jsonData.length > 0) {
                 for (var i = 0; i < jsonData.length; i++) {
-                    debugger;
                     var mhtml = "";
                     //console.log(jsonData[i].id);
                     var alt = 'Address: ' + jsonData[i].data.address + "<br />" + ' County: ' + jsonData[i].data.county + ' Area: ' + jsonData[i].data.area + "<br />";
@@ -203,14 +198,19 @@
             //showBotTyping();
             $(".suggestions").remove();
         }
+        function setBotResponse(message) {
+            const user_response = `<img class="userAvatar" src="static/img/botAvatar.png"><p class="userMsg">${message} </p><div class="clearfix"></div>`;
+            $("#chatbox").append(user_response);
+            $(".suggestions").remove();
+            $(".quickReplies").remove();
+        }
         function openForm() {
             document.getElementById("myForm").style.display = "block";
             document.getElementById("divimg").style.display = "none";
             document.getElementById("chatbox").innerHTML = "";
             document.getElementById("chats").innerHTML = "";
             var initialText = "Hello Welcome to Buy or Rent. What would you like to do?";
-            var userHtml = '<p class = "userText"><span>' + initialText + '</span></p>';
-            $("#chatbox").append(userHtml);
+            setBotResponse(initialText);
             var quickRepliesData = ['Rent', 'Buy']
             let chips = "";
             for (let i = 0; i < quickRepliesData.length; i += 1) {
@@ -229,7 +229,6 @@
         function getBotResponse(message) {
             var rawText = message;
             $.get("/get", { msg: rawText }).done(function (data) {
-                debugger;
                 let quickRepliesData = [];
                 let chips = "";
                 if (data.startsWith("R-") || data.startsWith("B-")) {

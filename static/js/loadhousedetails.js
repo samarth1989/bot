@@ -73,11 +73,9 @@ function showQuickReplies() {
 $(document).on("click", ".quickReplies .chip", function () {
     const text = this.innerText;
     if (text == "Click To View Results") {
-        window.open("/filter?typee=" + type + "&price=" + amount + "", '_blank').focus();
-        $(".quickReplies").remove();
+        window.open("/filter?type=" + type + "&price=" + amount + "", '_blank').focus();
         var initialText = "Do you need more assistance?";
-        var userHtml = '<p class = "userText"><span>' + initialText + '</span></p>';
-        $("#chatbox").append(userHtml);
+        setBotResponse(initialText);
         var quickRepliesData = ['Yes', 'No']
         let chips = "";
         for (let i = 0; i < quickRepliesData.length; i += 1) {
@@ -92,8 +90,7 @@ $(document).on("click", ".quickReplies .chip", function () {
     else if(text=="Thank You for contacting us! Have a nice day :)")
     {
         $(".quickReplies").remove();
-        var userHtml = '<p class = "userText"><span>' + text + '</span></p>';
-        $("#chatbox").append(userHtml);
+        setBotResponse(text);
     }
     else {
         const payload = this.getAttribute("data-payload");
@@ -106,7 +103,6 @@ $(document).on("click", ".quickReplies .chip", function () {
 function chatProps(jsonData) {
     if (jsonData.length > 0) {
         for (var i = 0; i < jsonData.length; i++) {
-            debugger;
             var mhtml = "";
             //console.log(jsonData[i].id);
             var alt = 'Address: ' + jsonData[i].data.address + "<br />" + ' County: ' + jsonData[i].data.county + ' Area: ' + jsonData[i].data.area + "<br />";
@@ -127,15 +123,17 @@ function chatProps(jsonData) {
 function setUserResponse(message) {
     const user_response = `<img class="userAvatar" src="static/img/userAvatar.jpg"><p class="userMsg">${message} </p><div class="clearfix"></div>`;
     $("#chatbox").append(user_response);
-    //scrollToBottomOfResults();
-    //showBotTyping();
     $(".suggestions").remove();
 }
-
+function setBotResponse(message) {
+    const user_response = `<img class="userAvatar" src="static/img/botAvatar.png"><p class="userMsg">${message} </p><div class="clearfix"></div>`;
+    $("#chatbox").append(user_response);
+    $(".suggestions").remove();
+    $(".quickReplies").remove();
+}
 function getBotResponse(message) {
     var rawText = message;
     $.get("/get", { msg: rawText }).done(function (data) {
-        debugger;
         let quickRepliesData = [];
         let chips = "";
         if (data.startsWith("R-") || data.startsWith("B-")) {
